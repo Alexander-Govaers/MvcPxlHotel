@@ -1,0 +1,36 @@
+﻿@using MvcPxlHotel.ViewModels
+
+@model IEnumerable<HotelOverviewViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Hotel</th>
+            <th>HotelRooms</th>
+            <th>HotelRoomNumber</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var hotel in Model )
+        {
+            <tr>
+                <td colspan="3">@hotel.HotelName @hotel.HotelCountry</td>
+            </tr>
+            @foreach(var item in hotel.HotelRooms)
+            {
+                <tr>
+                    <td></td>
+                    <td >@item.HotelRoomName</td>
+                    <td >@item.HotelRoomNumber</td>
+                </tr>
+            }
+        
+        }
+    </tbody>
+</table>
+
+

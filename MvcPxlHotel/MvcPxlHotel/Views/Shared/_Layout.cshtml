@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MvcPxlHotel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MvcPxlHotel.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="bg-danger text-black text-center">
+        <h1>PXL HOTEL</h1>
+    </header>
+    <div class="row">
+        <main role="main" class="col-9 m-3">
+            <a asp-action="Create" asp-controller="Hotel" class="btn btn-danger m-2 ">New Hotel</a>
+            <br />
+            <a asp-action="Create" asp-controller="HotelRoom" class="btn btn-danger m-2">New HotelRoom</a>
+
+            <table>
+
+            </table>
+            @RenderBody()
+        </main>
+
+        <div class="col-3">
+
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - MvcPxlHotel
+            <br />
+            <a asp-area="" asp-controller="Home" asp-action="Index">Startpage</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
